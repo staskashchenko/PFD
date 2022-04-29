@@ -69,13 +69,46 @@ function rectDraw(arg){
     ctx.fillRect(arg[0]*cordX, arg[1]*cordY, arg[2]*cordX, arg[3]*cordY);
 }
 
-function static4Dynamic(){
-    //left rectangle
+function speedStatic(){
+    //rectangle
     rectDraw([40,175,90,650,"#404040"]);
-    //right rectangle
+    //top line
+    lineDraw([40,175,140,175,"white"]);
+    //vertical line
+    lineDraw([130,175,130,825,"white"]);
+    //bottom line
+    lineDraw([40,825,140,825,"white"]); 
+}
+
+function heightStatic(){
+    //right rectangle(height)
     rectDraw([470,175,90,650,"#404040"]);
-    //down rectangle
+    //top line
+    lineDraw([465,175,575,175,"white"]);
+    //vertical line
+    lineDraw([560,175,560,825,"white"]);
+    //bottom line
+    lineDraw([465,825,575,825,"white"]);
+}
+
+function compassStatic(){
+    //bottom rectangle
     rectDraw([170,850,260,100,"#404040"]);
+        //top line
+    lineDraw([170,850,430,850,"white"]);
+        //left line
+    lineDraw([170,850,170,950,"white"]);
+        //right line
+    lineDraw([430,850,430,950,"white"]);  
+}
+
+function static4Dynamic(){
+    //speed(left)
+    speedStatic();
+    //height(right)
+    heightStatic();
+    //compass(bottom)
+    compassStatic();
 }
 
 function drawDynamic(){
