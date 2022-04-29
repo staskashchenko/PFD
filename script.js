@@ -15,10 +15,12 @@ if (fontSize>cordY*33){
 
 
 var ctx = canvas.getContext("2d");
-ctx.fillStyle = "white";
+
 
 function lineDraw(arg){
+    ctx.fillStyle = "white";
     ctx.strokeStyle = arg[4];
+    ctx.fillStyle =arg[4];
     ctx.moveTo(arg[0]*cordX, arg[1]*cordY);
     ctx.lineTo(arg[2]*cordX, arg[3]*cordY);
 }
@@ -57,7 +59,7 @@ function drawStatic(){
     //A/THR
     textDraw(["A/THR","left","green",fontSize, "Arial", 510, 24+3*fontSize]);
     //3000
-    textDraw(["3000","center","#66FFFF",fontSize, "Arial", 505, 74+3*fontSize]);
+    textDraw(["3000","center","#66FFFF",fontSize, "Arial", 505, 70+3*fontSize]);
     //1013
     textDraw(["1013","center","#66FFFF",fontSize, "Arial", 500, 900]);
     //QNH
@@ -69,24 +71,59 @@ function rectDraw(arg){
     ctx.fillRect(arg[0]*cordX, arg[1]*cordY, arg[2]*cordX, arg[3]*cordY);
 }
 
+function triDraw(arg){
+    ctx.fillStyle =arg[6];
+    ctx.strokeStyle=arg[6];
+    //first point
+    ctx.moveTo(arg[0],arg[1]);
+    ctx.lineTo(arg[2], arg[3]);
+    ctx.lineTo(arg[4], arg[5]);
+    ctx.closePath();
+    ctx.fill();
+}
+
+function hTriDraw(arg){
+    ctx.fillStyle =arg[6];
+    ctx.strokeStyle=arg[6];
+    //first point
+    ctx.moveTo(arg[0],arg[1]);
+    ctx.lineTo(arg[2], arg[3]);
+    ctx.lineTo(arg[4], arg[5]);
+    ctx.closePath();
+}
+
+function speedPointer(){
+
+}
 function speedStatic(){
     //rectangle
-    rectDraw([40,175,90,650,"#404040"]);
+    rectDraw([40,185,90,640,"#404040"]);
     //top line
-    lineDraw([40,175,140,175,"white"]);
+    lineDraw([40,185,140,185,"white"]);
     //vertical line
-    lineDraw([130,175,130,825,"white"]);
+    lineDraw([130,185,130,825,"white"]);
     //bottom line
     lineDraw([40,825,140,825,"white"]); 
+    //pointer
+        //small left rect
+    rectDraw([35,500,5,5,"#FFFF00"]);
+        //line
+    rectDraw([40,500,50,1,"#FFFF00"]);
+        //middle rectengle
+    rectDraw([90,500,45,5,"#FFFF00"]);
+        //triangle
+    triDraw([305,568,315,575,315,561,"#FFCC00"]);
+        //holo triangle
+    hTriDraw([300,568,320,580,320,556,"#FF00FF"]);
 }
 
 function heightStatic(){
     //right rectangle(height)
-    rectDraw([470,175,90,650,"#404040"]);
+    rectDraw([470,185,90,640,"#404040"]);
     //top line
-    lineDraw([465,175,575,175,"white"]);
+    lineDraw([465,185,575,185,"white"]);
     //vertical line
-    lineDraw([560,175,560,825,"white"]);
+    lineDraw([560,185,560,825,"white"]);
     //bottom line
     lineDraw([465,825,575,825,"white"]);
 }
