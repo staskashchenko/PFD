@@ -112,7 +112,7 @@ function speedStatic(){
         //middle rectengle
     rectDraw([90,500,45,5,"#FFFF00"]);
         //triangle
-    triDraw([305,568,315,575,315,561,"#FFCC00"]);
+    triDraw([305,568,315,575,315,561,"#FFFF00"]);
         //holo triangle
     hTriDraw([300,568,320,580,320,556,"#FF00FF"]);
 }
