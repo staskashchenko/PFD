@@ -48,7 +48,7 @@ function drawStatic(){
     textDraw(["MDA","center","white",fontSize*doSmall, "Arial", 430, 120]);
     //940
     textDraw(["940","center","#66FFFF",fontSize/1.2*doSmall, "Arial", 470, 120]);
-    //middle top line
+    //right top line
     lineDraw([500,20,500,120,"white"]);
     //AP1
     textDraw(["AP1","left","green",fontSize, "Arial", 520, 16+1*fontSize]);
@@ -62,11 +62,24 @@ function drawStatic(){
     textDraw(["1013","center","#66FFFF",fontSize, "Arial", 500, 900]);
     //QNH
     textDraw(["QNH","center","#66FFFF",fontSize, "Arial", 500, 904+fontSize]);
+}
 
-    
+function rectDraw(arg){
+    ctx.fillStyle = arg[4];
+    ctx.fillRect(arg[0]*cordX, arg[1]*cordY, arg[2]*cordX, arg[3]*cordY);
+}
+
+function static4Dynamic(){
+    //left rectangle
+    rectDraw([40,175,90,650,"#404040"]);
+    //right rectangle
+    rectDraw([470,175,90,650,"#404040"]);
+    //down rectangle
+    rectDraw([170,850,260,100,"#404040"]);
 }
 
 function drawDynamic(){
+    static4Dynamic();
     
 }
 
